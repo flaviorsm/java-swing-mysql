@@ -1,0 +1,17 @@
+/**
+ * Author:  flavio.moreira
+ * Created: 15/06/2018
+ */
+CREATE TABLE IF NOT EXISTS produto (
+    CODPROD         INT NOT NULL AUTO_INCREMENT,
+    CODLOCAL        INT
+    DESCRICAO       VARCHAR(35) NOT NULL,
+    QTD_ESTOQUE     INT NULL,
+    PRECO_UNITARIO  DOUBLE NULL,
+);
+
+ALTER TABLE produto ADD
+ CONSTRAINT fk_local 
+FOREIGN KEY (CODLOCAL) 
+ REFERENCES localidade (CODLOCAL) ;
+
